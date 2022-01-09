@@ -1,0 +1,39 @@
+.ativo {
+  color: #26394b;
+  background-color: #abc8e1;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+#menu {
+  width: auto;
+  height: 80px;
+  background-color: aliceblue;
+}
+
+nav > a {
+  color: lightslategray;
+  background-color: aliceblue;
+  padding: 5px 10px 5px 10px;
+  line-height: 80px;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  color: aliceblue;
+  background-color: #8babc7;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+nav > span {
+  color: cornflowerblue;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 2em;
+}
+
+li {
+  list-style-type: none;
+}

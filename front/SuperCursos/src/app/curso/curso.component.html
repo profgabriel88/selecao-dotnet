@@ -1,0 +1,72 @@
+
+<div *ngIf="cursoSelecionado">
+  <div class="container">
+    <h3 class="text-center mt-3">Conheça nossos Cursos</h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Curso</th>
+            <th>Carga Horária</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let curso of cursos">
+              <td>{{ curso.id }}</td>
+              <td>{{ curso.nome }}</td>
+              <td>{{ curso.cargaHoraria }}</td>
+              <td>
+                <button class="btn btn-sm btn-outline-success" (click)="selecionaCurso(curso)">Inscrever</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <app-matricula [curso]="cursoSelecionado" [cursoId]="cursoId"></app-matricula>
+        </div>
+        <div class="row">
+          <div class="col-md-2 offset-md-10">
+            <button class="botao-media btn-outline-primary btn-sm mt-2" (click)="deselectCurso()">Voltar</button>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!cursoSelecionado">
+  <div class="container">
+    <h3 class="text-center mt-3">Conheça nossos Cursos</h3>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Curso</th>
+            <th>Carga Horária</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let curso of cursos">
+              <td>{{ curso.id }}</td>
+              <td>{{ curso.nome }}</td>
+              <td>{{ curso.cargaHoraria }}</td>
+              <td>
+                <button class="btn btn-sm btn-outline-success" (click)="selecionaCurso(curso)">Inscrever</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

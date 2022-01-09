@@ -1,0 +1,70 @@
+<h3 class="text-center mt-3">Escolha a forma de pagamento</h3>
+<hr />
+<p class="text-center" *ngIf="!resposta">Insira seus dados para pagar</p>
+<p class="text-center" *ngIf="resposta">Pagamento realizado</p>
+<div class="container" *ngIf="!matriculaInput">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form action="">
+        <div class="form-group mt-2">
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            placeholder="Email"
+            [(ngModel)]="email"
+          />
+        </div>
+        <div class="form-group mt-2">
+          <input type="password" class="form-control" placeholder="Senha" />
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <input
+            type="submit"
+            class="btn btn-sm btn-outline-success"
+            value="Enviar"
+            (click)="isCollapsed = !isCollapsed"
+            (click)="getCartao()"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseBasic"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="well well-lg card card-block card-header">
+          <div class="col-sm-12">
+            <h4>Cartão salvo: {{numeroCartao}}</h4>
+          </div>
+          <div class="d-flex">
+            <input type="submit" (click)="getEstudante()" class="btn btn-sm btn-primary" value="Mensal: R$ 80,00">
+            <input type="submit" (click)="getEstudante()" class="btn btn-sm btn-primary ms-2 me-2" value="Anual: R$ 800,00">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container d-block" *ngIf="matriculaInput">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="well well-lg card card-block card-header">
+          <div class="d-inline-block">
+            <h4>Cartão salvo: {{numeroCartao}}</h4>
+          </div>
+          <div class="d-flex">
+            <input type="submit" (click)="getEstudante()" class="btn btn-sm btn-primary" value="Mensal: R$ 80,00">
+            <input type="submit" (click)="getEstudante()" class="btn btn-sm btn-primary ms-2 me-2" value="Anual: R$ 800,00">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
